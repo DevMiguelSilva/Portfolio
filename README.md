@@ -1,37 +1,27 @@
-# Miguel Silva — Portfolio Site
+# Miguel Silva — Portfolio
 
-Personal portfolio showcasing software development projects built with React and TypeScript.
+Personal portfolio built with React, TypeScript, Vite, and Tailwind CSS. Sections: Hero, About, Projects, Skills, and Contact.
 
-## Sections
+## Local development
 
-- **Hero** — Introduction, LinkedIn & GitHub links
-- **About** — Professional background
-- **Projects** — ApplyTrack (featured) and FitTrack
-- **Skills** — Tech stack
-- **Contact** — LinkedIn & GitHub
+Run `npm ci` and `npm run dev` from this repository root. `npm run build` generates `dist`; `npm run lint` checks the code.
 
-## Run locally
+The site works with its default public links. Optionally copy `.env.example` to `.env.local`; leave demo overrides empty to use current defaults. `VITE_JOB_TRACKER_URL` and `VITE_FIT_TRACKER_URL` override demo links, while `VITE_GITHUB_URL` and `VITE_LINKEDIN_URL` override social links. Never commit private configuration.
 
-```bash
-npm install
-npm run dev
-```
+## Editing
 
-## Environment variables
+- `src/App.tsx`: page sections and project cards.
+- `src/data/portfolio.ts`: project content, skills, stats, and socials.
+- `src/config/links.ts`: demo URL defaults and overrides.
+- `src/index.css` and `tailwind.config.js`: shared styling.
 
-```bash
-cp .env.example .env
-```
+## Projects
 
-| Variable | Description |
-|----------|-------------|
-| `VITE_JOB_TRACKER_URL` | Deployed job tracker URL |
-| `VITE_FIT_TRACKER_URL` | Deployed FitTrack URL |
-| `VITE_GITHUB_URL` | Your GitHub profile |
-| `VITE_LINKEDIN_URL` | Your LinkedIn profile |
+- [ApplyTrack source](https://github.com/DevMiguelSilva/applytrack) · [Live app](https://applytrack-board.vercel.app)
+- [FitTrack source](https://github.com/DevMiguelSilva/fittrack) · [Live app](https://fit-tracker-jet-ten.vercel.app)
 
-## Deploy
+The product apps are independent repositories and deployments. This site only links to them.
 
-Deploy on Vercel with **Root Directory** set to `portfolio`.
+## Deployment
 
-See [../DEPLOY.md](../DEPLOY.md) for the full guide.
+Use the existing Vercel project `portfolio` with `DevMiguelSilva/portfolio`, Root Directory empty, and production branch `main`. See [DEPLOY.md](DEPLOY.md).

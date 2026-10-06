@@ -1,28 +1,27 @@
-/**
- * Live demo URLs — env vars in Vercel override these fallbacks.
- * jobTracker must be the Git-connected project (job-tracker), not the older
- * applytrack-board project, which does not receive pushes from this repo.
- */
+/** Live demo defaults use the existing Vercel production domains. */
 export const LIVE_URLS = {
-  jobTracker: 'https://job-tracker-miguel-381c.vercel.app',
-  fitTracker: 'https://fittrack-logbook.vercel.app',
+  jobTracker: 'https://applytrack-board.vercel.app',
+  fitTracker: 'https://fit-tracker-jet-ten.vercel.app',
 }
 
 function resolveLiveUrl(envValue: string | undefined, fallback: string): string {
-  if (envValue?.startsWith('http')) return envValue.replace(/\/$/, '')
-  if (fallback.startsWith('http') && !fallback.includes('REPLACE')) {
-    return fallback.replace(/\/$/, '')
+  const configured = envValue?.trim()
+  if (!configured) return fallback
+  try {
+    const url = new URL(configured)
+    if (
+      !['http:', 'https:'].includes(url.protocol) ||
+      url.hostname.startsWith('your-') ||
+      configured.includes('REPLACE')
+    ) return fallback
+    return configured.replace(/\/$/, '')
+  } catch {
+    return fallback
   }
-  return ''
 }
 
 export function getJobTrackerUrl(): string {
-  const configured = import.meta.env.VITE_JOB_TRACKER_URL
-  // Older Vercel env still names the project that does not receive git deploys.
-  if (configured?.includes('applytrack-board.vercel.app')) {
-    return LIVE_URLS.jobTracker
-  }
-  return resolveLiveUrl(configured, LIVE_URLS.jobTracker)
+  return resolveLiveUrl(import.meta.env.VITE_JOB_TRACKER_URL, LIVE_URLS.jobTracker)
 }
 
 export function getFitTrackerUrl(): string {
