@@ -4,6 +4,8 @@ Personal portfolio built with React, TypeScript, Vite, and Tailwind CSS. Section
 
 ## Local development
 
+The standalone workspace is `C:\Dev\Projects\portfolio`; run commands from that directory.
+
 Run `npm ci` and `npm run dev` from this repository root. `npm run build` generates `dist`; `npm run lint` checks the code.
 
 The site works with its default public links. Optionally copy `.env.example` to `.env.local`; leave demo overrides empty to use current defaults. `VITE_JOB_TRACKER_URL` and `VITE_FIT_TRACKER_URL` override demo links, while `VITE_GITHUB_URL` and `VITE_LINKEDIN_URL` override social links. Never commit private configuration.
