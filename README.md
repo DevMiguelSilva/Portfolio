@@ -2,6 +2,8 @@
 
 Personal portfolio built with React, TypeScript, Vite, and Tailwind CSS. Sections: Hero, About, Projects, Skills, and Contact.
 
+Live portfolio: [miguelcode.dev](https://miguelcode.dev/). `www.miguelcode.dev` permanently redirects to this canonical address.
+
 ## Local development
 
 The standalone workspace is `C:\Dev\Projects\portfolio`; run commands from that directory.
@@ -19,8 +21,8 @@ The site works with its default public links. Optionally copy `.env.example` to 
 
 ## Projects
 
-- [ApplyTrack source](https://github.com/DevMiguelSilva/applytrack) · [Live app](https://applytrack-board.vercel.app)
-- [FitTrack source](https://github.com/DevMiguelSilva/fittrack) · [Live app](https://fit-tracker-jet-ten.vercel.app)
+- [ApplyTrack source](https://github.com/DevMiguelSilva/applytrack) · [Live app](https://applytrack.miguelcode.dev)
+- [FitTrack source](https://github.com/DevMiguelSilva/fittrack) · [Live app](https://fittrack.miguelcode.dev)
 
 The product apps are independent repositories and deployments. This site only links to them.
 

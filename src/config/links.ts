@@ -1,7 +1,7 @@
-/** Live demo defaults use the existing Vercel production domains. */
+/** Live demo defaults use the apps' production custom domains. */
 export const LIVE_URLS = {
-  jobTracker: 'https://applytrack-board.vercel.app',
-  fitTracker: 'https://fit-tracker-jet-ten.vercel.app',
+  jobTracker: 'https://applytrack.miguelcode.dev',
+  fitTracker: 'https://fittrack.miguelcode.dev',
 }
 
 function resolveLiveUrl(envValue: string | undefined, fallback: string): string {
